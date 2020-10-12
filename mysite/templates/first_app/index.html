@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title><>First App</title>
+    <link rel="stylesheet" href="{% static "css/mystyle.css" %}"/>
+  </head>
+  <body>
+<!--   <h1> Hello this is first_app/index.html</h1>
+      {{insert_me}}
+-->
+    <h1>Welcome to Django Level Two!</h1>
+    <h2>Here are your AccessRecord:</h2>
+<!--    <img src = "{%static "images/cutebunny.jpg" %}" alt="oh no, it doesnt show">
+-->
+    <div class="djangotwo">
+      {% if access_records %}
+      <table>
+        <thread>
+          <th> Site Name </th>
+          <th> Date Accessed</th>
+        </thread>
+        {% for acc in access_records %}
+        <tr>
+            <td> {{acc.name}} </td>
+            <td> {{acc.date}} </td>
+            {% endfor %}
+      </table>
+      {% else %}
+        <p> No Access records Found! </p>
+      {% endif %}
+    </div>
+
+  </body>
+</html>
